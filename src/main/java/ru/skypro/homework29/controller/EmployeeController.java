@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/departments")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
