@@ -2,6 +2,7 @@ package ru.skypro.homework29.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.skypro.homework29.Employee;
 import ru.skypro.homework29.service.EmployeeService;
@@ -20,19 +21,19 @@ public class EmployeeController {
     }
 
     @GetMapping("min-salary")
-    public Employee getEmployeeWithMinSalary(int departmentId) {
+    public Employee getEmployeeWithMinSalary(@RequestParam("departmentId") int departmentId ) {
         return employeeService.getEmployeeWithMinSalary(departmentId);
 
     }
     @GetMapping("max-salary")
-    public Employee getEmployeeWithMaxSalary(int departmentId){
+    public Employee getEmployeeWithMaxSalary(@RequestParam("departmentId")int departmentId){
         return employeeService.getEmployeeWithMaxSalary(departmentId);
 }
     @GetMapping("all")
-    public List<Employee> getAllEmployees(int departmentId){
+    public List<Employee> getAllEmployees(@RequestParam("departmentId")int departmentId){
         return employeeService.getAllEmployees(departmentId);
 }
-    @GetMapping("all-grouped")
+    @GetMapping(path = "/all", params = "departmentId")
     public Map<Integer, List<Employee>> getAllEmployeesDepartment(){
         return employeeService.getAllEmployeesDepartment();
 }

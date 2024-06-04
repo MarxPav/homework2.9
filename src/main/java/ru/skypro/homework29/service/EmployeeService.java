@@ -10,7 +10,7 @@ public interface EmployeeService {
 
     Employee getEmployeeWithMaxSalary(int department);
 
-     List<Employee> getAllEmployees(int department);
+    List<Employee> getAllEmployees(int department);
 
-     Map<Integer, List<Employee>> getAllEmployeesDepartment();
+    Map<Integer, List<Employee>> getAllEmployeesDepartment();
 }
